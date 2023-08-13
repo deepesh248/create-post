@@ -1,6 +1,8 @@
 import CreatePost from "./CreatePost";
+import ViewPost from "./ViewPost";
 import {Routes,Route} from 'react-router-dom';
 import Navbar from "./Navbar";
+import PostDetail from "./PostDetail";
 
 function App() {
   
@@ -21,6 +23,8 @@ function App() {
     <Routes>
       <Route path="/" Component={Temp}/>
       <Route path="/CreatePost" Component={CreatePost}/>
+      <Route path="/ViewPost" Component={ViewPost}/>
+      <Route path="/post/:postId" Component={PostDetail}/>
     </Routes>
     </>
   );

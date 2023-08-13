@@ -18,6 +18,7 @@ function CreatePost() {
   }
   return (
     <>
+      <h1 className="text-center text-black text-[3rem] font-semibold font-mono m-8">Create Post</h1>
       <form className="container w-1/2 m-auto mt-5" onSubmit={handleSubmit}>
         <div className="relative z-0 w-full mb-6 group">
           <input
