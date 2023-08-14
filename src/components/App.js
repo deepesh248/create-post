@@ -24,7 +24,7 @@ function App() {
       <Route path="/" Component={Temp}/>
       <Route path="/CreatePost" Component={CreatePost}/>
       <Route path="/ViewPost" Component={ViewPost}/>
-      <Route path="/post/:postId" element={<PostDetail/>}/>
+      <Route path="/post/:postId" Component={PostDetail}/>
     </Routes>
     </>
   );

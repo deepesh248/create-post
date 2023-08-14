@@ -15,8 +15,10 @@ function PostDetail() {
   
   return (
     <>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+      <div className="w-3/4 m-auto p-4 bg-white mt-10 shadow-md border-2 rounded-md">
+      <div className="w-3/5 m-auto text-left text-blue-700 text-[3rem] font-serif font-medium border-l-8 border-blue-700 pl-6 mt-4">{post.title}</div>
+      <div className="w-3/5 m-auto mt-14 pb-8 text-[1.3rem]">{post.content}</div>
+      </div>
     </>
   );
 }
