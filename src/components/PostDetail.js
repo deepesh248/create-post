@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react";
-import { firestore } from "../firebase";
+import { db } from "../firebase";
+import {doc, getDoc} from 'firebase/firestore'
 import { useParams } from "react-router-dom";
 
 function PostDetail() {
   const [post, setPost] = useState({});
   const { postId } = useParams();
   useEffect(() => {
-    firestore
-      .collection("posts")
-      .doc(postId)
-      .get()
-      .then(
-        (snapshot) => {
-          console.log(snapshot.data);
-          setPost(snapshot.data);
-        },
-        [postId]
-      );
+    const docRef = doc(db, 'posts', postId);
+    getDoc(docRef).then((doc)=>{
+    setPost(doc.data());
+  })
   });
+  
   return (
     <>
       <h1>{post.title}</h1>
