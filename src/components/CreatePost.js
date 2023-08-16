@@ -1,11 +1,13 @@
 import useInputForm from "../hooks";
 import {firestore} from '../firebase';
+import {useNavigate} from 'react-router-dom';
 
 function CreatePost() {
 
   const title = useInputForm('');
   const subtitle = useInputForm('');
   const content = useInputForm('');
+  const navigate = useNavigate();
   
   function handleSubmit(e){
     e.preventDefault();
@@ -15,6 +17,7 @@ function CreatePost() {
       content : content.value,
       createdAt : new Date()
     })
+    navigate('/ViewPost');
   }
   return (
     <>
